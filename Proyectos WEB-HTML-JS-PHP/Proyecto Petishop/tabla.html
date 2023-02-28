@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="estilo_tabla.css">
+	<title></title>
+
+
+    <style>
+
+table{
+	border-spacing: 0;
+	width:500px;
+}
+.bordered{
+	border: 1px solid orange;
+	border-radius:20px;
+	box-shadow: 0 3px 3px blue;
+}
+.bordered td, .bordered th{
+	border-left: 1px solid yellow;
+	border-top: 1px solid green;
+	padding: 10px;
+	text-align: left;
+}
+.bordered th:first-child{
+	border-radius: 20px 0 0 0;
+}
+.bordered th:last-child{
+	border-radius:  0 20px 0 0;
+}
+.bordered tr:last-child td:first-child{
+	border-radius: 0 0 0 20px;
+}
+.bordered tr:last-child td:last-child{
+	border-radius: 0 0 20px 0;
+}
+.bordered tr:hover{
+	background: #C38EFE;
+}
+.bordered th{
+	background: #CDF37A;
+}
+.bordered tr:nth-child(even){background-color: #f2fff3;}
+.bordered tr:nth-child(odd){background:#F86767;}
+
+
+    </style>
+</head>
+<body>
+<table class="bordered">
+	<thead>
+		<tr>
+			<th>Encabezado 1</th>
+			<th>Encabezado 2</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>Columna 1</td>
+		<td> Columna 2</td>
+	</tr>
+	<tr>
+		<td colspan="2">Columna 1</td>
+		
+	</tr>
+	<tr>
+		<td>Columna 1</td>
+		<td> Columna 2</td>
+	</tr>
+	<tr>
+		<td>Columna 1</td>
+		<td> Columna 2</td>
+	</tr>
+</table>
+</body>
+</html>

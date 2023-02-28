@@ -1,0 +1,90 @@
+BEGIN BEGIN
+{ {
+$
+INTEGER INTEGER
+id a1
+, ,
+id a2
+= =
+num 20
+, ,
+id a3
+; ;
+$
+REAL REAL
+id b21
+, ,
+id b22
+, ,
+id b23
+= =
+dec 2.5
+; ;
+$
+READ READ
+( (
+id a1
+) )
+; ;
+$
+READ READ
+( (
+id b21
+) )
+; ;
+$
+id a3
+= =
+ADD ADD
+( (
+id a1
+, ,
+id a2
+) )
+; ;
+$
+id a2
+= =
+ADD ADD
+( (
+id a1
+, ,
+SUB SUB
+( (
+num 30
+, ,
+id a3
+) )
+) )
+; ;
+$
+id b22
+= =
+MUL MUL
+( (
+id b21
+, ,
+DIV DIV
+( (
+id b23
+, ,
+dec 5.0
+) )
+) )
+; ;
+$
+WRITE WRITE
+( (
+id a2
+) )
+; ;
+$
+WRITE WRITE
+( (
+id b22
+) )
+; ;
+$
+} }
+END END
+$

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "datetimepicker": "^0.1.39",
+    "sweetalert": "^2.1.2"
+  }
+}

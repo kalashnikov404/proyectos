@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style>
+
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+    	/* Coded with love by Mutiullah Samim */
+	
+
+        body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #fe0457 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #d8634b 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+margin: 0;
+			padding: 0;
+			height: 100%;
+}
+
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #60a3bc !important;
+		}
+
+
+
+
+		.user_card {
+			height: 700px;
+			width: 500px;
+			margin-top: auto;
+			margin-bottom: auto;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			
+
+			background: #CF6766;
+
+
+			border-radius: 5px;
+
+		}
+		.brand_logo_container {
+			position: absolute;
+			height: 170px;
+			width: 170px;
+			top: -75px;
+			border-radius: 50%;
+			background: #8EAEBD;
+			padding: 10px;
+			text-align: center;
+		}
+		.brand_logo {
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			border: 2px solid white;
+		}
+		.form_container {
+			margin-top: 100px;
+		}
+		.login_btn {
+			width: 100%;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #30415D !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+			background-color: #30415D !important;
+		}
+
+</style>
+<script>
+a = 0;
+function addCancion(){
+        a++;
+
+        var div = document.createElement('div');
+        div.setAttribute('class', 'form-inline');
+            div.innerHTML = '<div style="clear:both" class="cancion_'+a+' col-md-offset-1 col-md-6"><input class="form-control" name="cancion_'+a+'" type="text"/></div><div class="cancion_'+a+' col-md-2""><input class="form-control" name="duracion_'+a+'" type="text"/></div>';
+            document.getElementById('canciones').appendChild(div);document.getElementById('canciones').appendChild(div);
+}
+</script>
+
+
+</head>
+
+<body>
+<div class="container">
+    <h3>Formulario de productos</h3>
+    <form action="formulario2.html" id="formulario" method="get">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-4"><label>Nombre</label></div>
+        <div class="col-md-4"><input class="form-control" name="nombre_cd" type="text"/></div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-6"><label>Cantidad</label></div>
+        <div class="col-md-2"><label>Existencia</label></div>
+        <div class="col-md-1"><input type="button" class="btn btn-success" id="add_cancion()" onClick="addCancion()" value="+" /></div>
+    </div>
+    <!-- El id="canciones" indica que la función de JavaScript dejará aquí el resultado -->
+    <div class="row" id="canciones">
+    </div>
+    </form>
+</div>
+
+</body>
+</html>

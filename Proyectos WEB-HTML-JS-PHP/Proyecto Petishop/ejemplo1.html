@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <div id="principal">
+        <h3>Lista de Elementos</h3>
+        <ul>
+            <li class="active" id="elemento_1" style="font-size: 10px"; color="purple">Elemento 1</li>
+            <li class="active opcion">Elemento 2</li>
+            <li class="active">Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+        </ul>
+    </div>
+
+    <input type="radio" name="opciones" id="opc1" value="1">
+    <label for="opc1">Opcion 1</label>
+    <input type="radio" name="opciones" id="opc2" value="2">
+    <label for="opc2">Opcion 2</label>
+    <input type="radio" name="opciones" id="opc3" value="3">
+    <label for="opc3">Opcion 3</label>
+
+    <script type="text/javascript" src="control.js"></script>
+
+
+    <script>
+        /* 
+        elemento - .getElementById(id)
+        array - .getElementsByClassName(class)
+        array - .getElementsByName(name)
+        array - .getElementsByTagName(tag)
+        */
+        
+        var div = document.getElementById("principal");
+        div.style.background= "pink";
+        console.log(div);
+        
+        var ls = document.getElementsByClassName("active");
+        console.log(ls);
+        console.log("*******************************")
+        console.log(ls[0]);
+        console.log(ls[0].id);
+        ls[0].style.color = "yellow";
+        console.log(ls[0].style.color);
+        console.log(ls[0].innerHTML);
+        console.log(ls.length);
+        
+        var radios= document.getElementsByName('opciones');
+        console.log(radios);
+        console.log(radios[1]);
+        console.log(radios.length);
+        
+        var lis = document.getElementsByTagName('li')
+        console.log(lis);
+        
+        var qid = document.querySelector("#principal");
+        console.log(qid);
+        
+        var qclass = document.querySelectorAll(".active");
+        console.log(qclass);
+        
+        var qclass2 = document.querySelectorAll(".active.opcion");
+        console.groupCollapsed(qclass2);
+        
+        var qname = document.querySelectorAll('[name="opciones"]');
+        console.log(qname);
+        
+        var qli = document.querySelectorAll('li');
+        console.log(qli);
+        
+        
+        
+        
+        </script>
+</body>
+
+</html>
+
+

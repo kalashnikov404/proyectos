@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Busquedas</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+<style>
+
+
+#demotext {
+
+color: rgb(255, 255, 255);
+text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(255, 255, 255) 0px 0px 15px, rgb(255, 45, 149) 0px 0px 20px, rgb(255, 45, 149) 0px 0px 30px, rgb(255, 45, 149) 0px 0px 40px, rgb(255, 45, 149) 0px 0px 50px, rgb(255, 45, 149) 0px 0px 75px;
+--darkreader-inline-color: #e8e6e3;
+--darkreader-inline-bgimage: none;
+
+}
+
+
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #fe0457 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #d8634b 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+margin: 0;
+			padding: 0;
+			height: 100%;
+}
+
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #60a3bc !important;
+		}
+
+
+    #search-box{
+    border-style:red;
+    border-radius: 5px 0px 0px 0px ; 
+    height: 3rem;
+    background: #EEEEEE ;
+    
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    display:relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider-border{
+    border-right: 2px solid #DFD6D6;
+    height: auto;
+}
+
+.btn-default{
+    border-radius: 0px 5px 0px 0px !important;
+    background: #EEEEEE ;
+}
+
+input[type=search]:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    background: rgb(6, 240, 208) !important;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+input:focus ~ .btn-default {
+    background: rgb(240, 145, 145) ;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-default:focus,.btn-default:active {
+    outline: none !important;
+    box-shadow: none;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
+    background: white;
+ }
+
+ input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    font-weight: 700;
+ }
+  
+  #myUL {
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    min-height: fit-content;
+    max-height: 13rem;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    
+    border-radius: 0px 5px 0px 0px !important;
+  }
+  
+  #myUL li a {
+    margin-top: -1px; 
+    background-color: #e190e9; 
+    padding: 12px; 
+    text-decoration: none; 
+    font-size: 18px;
+    color: black; 
+    display: block;
+
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: rgb(235, 12, 12); /* Add a hover effect to all links, except for headers */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #737272; 
+    border-radius: 20px;
+    
+   
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    background: white;
+    
+    
+  }
+
+  .container-fluid, .row{
+
+    display:relative;
+  justify-content: center;
+  align-items: center;
+  padding: 12px; 
+
+
+  }
+
+
+.cont > .divider-border > i {
+  font-family: "Font Awesome 5 Free";
+  content: '\f077';
+  font-weight: 900;
+}
+
+
+.cont > input  {
+  
+    display:relative;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+   height: 3rem;
+width: 35rem;
+
+
+    background: #EEEEEE ;
+}
+
+.cont > .divider-border {
+  transition: all 0.2ms ease-in-out;
+  display: none;
+  position: absolute;
+  z-index: 3;
+  color: red;
+  top: 4px;
+  left: 115px;
+  height: 20px;
+  font-size: 16px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+  <div id="demotext" style="font-family: cursive; font-size:50px; font-weight: bold; color:#031424;">Buscar productos</div>
+
+
+    <div class="container-fluid">
+           
+        <div class="row" >
+            <section class="col-10" id="content">
+                <div class="row">
+                    <div class="col-7">
+                        <div class="input-group mt-4 cont">
+                           <div class="input-group-btn search-panel">
+                                <ul id="myUL" class="dropdown-menu col-12" role="menu">
+                                  <li><a href="#">Celulares</a></li>
+                                  <li><a href="#">Computadoras</a></li>
+                                  <li><a href="#">Pantallas</a></li>
+                                  <li><a href="#">Audifonos</a></li>
+                                  <li><a href="#">Accesorios</a></li>
+                                  <li><a href="#">Relojes</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cont">
+                            <input type="search" class="form-control search-radius" onkeyup="searchFilter()" name="search-template" placeholder="Busca alguna seccion de productos" id="search-box"> 
+                            <span   class="divider-border"><i onclick="limpiar();" id="ico" class="fa fa-times-circle"></i></span>
+                        </div>
+
+                            <button type="button" class="btn btn-default dropdown-toggle" id="search-box-btn" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                    
+                        </div>
+                    </div>
+                    <!-- /Searchbar -->
+                
+                  </div>
+               
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+
+
+document.getElementById('search-box').addEventListener('keydown', handleInput);
+
+document.getElementById('search-box').addEventListener('keyup', handleInput);
+
+function handleInput(e) {
+  if (document.getElementById('search-box').value != '') {
+
+    let caretPosition = e.target.selectionStart;
+    let newCaretPosition = ((caretPosition * 10) + 1) + 15;
+    document.querySelector('.cont > .divider-border').style.display = 'inline-block';
+    document.querySelector('.cont> .divider-border').style.left = `${newCaretPosition}px`;
+  } else {
+    document.querySelector('.cont > .divider-border').style.display = 'none';
+    document.querySelector('.cont > .divider-border').style.left = `15px`;
+  }
+}
+
+function limpiar(){
+
+  document.getElementById('search-box').value="";
+
+if(document.getElementById('search-box').value==""){
+  document.querySelector('.cont > .divider-border').style.display = 'none';
+
+}
+
+}
+    function searchFilter() {
+      let input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('search-box');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('li');
+    
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+</script>
+
+<script>
+    $('#search-box').on('input', function() {
+        $('#myUL').css('display', $(this).val()  !== '' ? 'block' : 'none')
+
+    });
+</script>
+
+
+
+<script>
+    let myUL = document.getElementById("myUL");
+    let search = document.getElementById('search-box');
+ 
+
+    $('#search-box-btn').click(function () { 
+       
+     
+
+
+
+        $('#myUL').css({
+            'margin-left' : -$('#search-box').outerWidth( true )
+            
+        }).toggle();
+        
+ if (document.getElementById('search-box').value != '') {
+    document.querySelector('.cont > .divider-border').style.display = 'block';
+
+
+let caretPosition = e.target.selectionStart;
+let newCaretPosition = ((caretPosition * 10) + 1) + 15;
+document.querySelector('.cont > .divider-border').style.display = 'inline-block';
+document.querySelector('.cont> .divider-border').style.left = `${newCaretPosition}px`;
+} else {
+document.querySelector('.cont > .divider-border').style.display = 'none';
+document.querySelector('.cont > .divider-border').style.left = `255px`;
+
+
+ }
+
+    });
+
+    $("li").on("click", function(){
+        $("#search-box").val($(this).text());
+        $('#myUL').hide();
+
+ if (document.getElementById('search-box').value != '') {
+    document.querySelector('.cont > .divider-border').style.display = 'block';
+
+
+let caretPosition = e.target.selectionStart;
+let newCaretPosition = ((caretPosition * 10) + 1) + 15;
+document.querySelector('.cont > .divider-border').style.display = 'inline-block';
+document.querySelector('.cont> .divider-border').style.left = `${newCaretPosition}px`;
+} else {
+document.querySelector('.cont > .divider-border').style.display = 'none';
+document.querySelector('.cont > .divider-border').style.left = `255px`;
+
+
+ }
+
+    });
+</script>
+
+<script>
+    $(".chart-section").on('click', function() {
+        let pieChart = $(this);
+        let table = $("#table");
+        let chartBackground = pieChart.css('background-color');
+        let chartText = pieChart.html();
+
+        $("#square2").css('transform', 'translate(600px, -26px)');
+        $("#square1").css('transform', 'translate(340px, -200px)');
+
+        table.css('background-color', chartBackground).css('transform', 'translate(0px, -458px)').html('Participants Table' + '<br>' + chartText);
+    });
+</script>
+    
+<script>
+  
+    var contentBg = document.getElementById('content');
+    var table = document.getElementById('table');
+    var square1 = document.getElementById('square1');
+    var square2 = document.getElementById('square2');
+    var ul = document.getElementById("myUL");
+    document.onclick = function(e){
+        if(e.target.id == 'content'){
+            table.style.transform = 'translate(0px, 0px)';
+            square1.style.transform = 'translate(0px, 0px)';
+            square2.style.transform = 'translate(0px, 0px)';
+            ul.style.display = 'none';
+        }
+        
+    }
+  
+</script>
+
+<script>
+    function light_input(){
+        let search = document.getElementById('search-box');
+        let button = document.getElementById('search-box-btn');
+        button.style.background = 'white';
+        search.style.background = 'white';
+        search.style.boxShadow = 'inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2)';
+    }
+</script>
+
+</body>
+</html>

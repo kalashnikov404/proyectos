@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   
+</body>
+<script>
+   var nodes = [
+    {
+        links: [ 1, 3 ], // node 0 is linked to node 1 and 3
+        weightLinks: [ 5, 15 ], // the distance between node 0 and 1 is 5, between 0 and 3 is 15
+        distance: Infinity
+    }, {
+        links: [ 0, 2 ], // node 1 is linked to node 0 and 2
+        weightLinks: [ 5, 5, ], // the distance between node 1 and 0 is 5, between 1 and 2 is 5
+        distance: Infinity
+    },
+    ...
+ ];
+
+
+function dijkstra( start ) {
+    nodes[ start ].distance = 0;
+
+    var queue = nodes.map( ( v, i ) => i );
+
+    while ( queue.length > 0 ) {
+        var queueIndex = undefined;
+
+        queue.reduce( function( minDist, nodeIndex, index ) {
+            queueIndex = nodes[ nodeIndex ].distance < minDist ? index : queueIndex;
+            return nodes[ nodeIndex ].distance < minDist ? nodes[ nodeIndex ].distance : minDist;
+        }, Infinity );
+
+        var nextIndex = queue.splice( queueIndex, 1 )[ 0 ];
+
+        nodes[ nextIndex ].links.forEach( function( childIndex, i ) {
+            var distance = nodes[ nextIndex ].distance + nodes[ nextIndex ].weightLinks[ i ];
+            if ( distance < nodes[ childIndex ].distance ) nodes[ childIndex ].distance = distance;
+        } );
+    }
+};
+
+dijkstra( 0 );''
+</script>
+</html>

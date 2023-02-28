@@ -1,0 +1,25 @@
+
+
+
+server:
+  port: 4004
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    password: root
+    url: jdbc:mysql://localhost/eglobal
+    username: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+      logging:
+        level:
+          org:
+            springframework: ERROR
+
+
