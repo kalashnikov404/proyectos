@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Diosa Hera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            overflow-x: hidden;
+            font-family: 'Georgia', serif;
+            position: relative;
+        }
+
+        .titulo {
+            margin-top: 30px;
+            font-size: 5em;
+            font-family: 'Great Vibes', cursive;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moverFondo 3s linear infinite;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            position: relative;
+        }
+
+        @keyframes moverFondo {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .album {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+        }
+
+        .foto {
+            width: 200px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 10px solid transparent;
+            background: linear-gradient(145deg, #ffdde1, #ee9ca7);
+            position: relative;
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .foto:hover {
+            transform: scale(1.1);
+            border: 10px solid #ff69b4;
+        }
+
+        .mensaje {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            display: none;
+        }
+
+        .tulipan {
+            position: absolute;
+            width: 30px;
+            height: 100px;
+            animation: balance 4s ease-in-out infinite alternate;
+        }
+
+        .tulipan::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 6px;
+            height: 100px;
+            background: #4caf50;
+            border-radius: 3px;
+            transform: translateX(-50%);
+        }
+
+        .petalos {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            transform: translateX(-50%);
+        }
+
+        @keyframes balance {
+            0% {
+                transform: rotate(-5deg);
+            }
+            100% {
+                transform: rotate(5deg);
+            }
+        }
+
+        /* Generar tulipanes aleatorios */
+        .petalo1 {
+            border-width: 30px 15px 0 15px;
+        }
+
+        .petalo2 {
+            border-width: 30px 15px 0 15px;
+            transform: translate(-50%, -10px) rotate(30deg);
+        }
+
+        .petalo3 {
+            border-width: 30px 15px 0 15px;
+            transform: translate(-50%, -10px) rotate(-30deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titulo">Mi Diosa Hera</div>
+
+    <div class="album">
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen1.jpg" alt="Foto 1">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen2.jpg" alt="Foto 2">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen3.jpg" alt="Foto 3">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen4.jpg" alt="Foto 4">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen5.jpg" alt="Foto 5">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen6.jpg" alt="Foto 6">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen7.jpg" alt="Foto 7">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen8.jpg" alt="Foto 8">
+            <div class="mensaje"></div>
+        </div>
+        <div class="foto" onmouseover="mostrarMensaje(this)">
+            <img src="imagen/imagen9.jpg" alt="Foto 9">
+            <div class="mensaje"></div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje(foto) {
+            const mensaje = foto.querySelector('.mensaje');
+            const adjetivos = ["Preciosa", "Deslumbrante", "Hermosa", "Maravillosa", "Radiante", "Bella", "Encantadora", "Exquisita", "Fascinante"];
+            const adjetivoAleatorio = adjetivos[Math.floor(Math.random() * adjetivos.length)];
+            mensaje.textContent = adjetivoAleatorio;
+            mensaje.style.display = 'block';
+            setTimeout(function() {
+                mensaje.style.display = 'none';
+            }, 2000);
+        }
+
+        function crearTulipan() {
+            const tulipan = document.createElement('div');
+            tulipan.className = 'tulipan';
+
+            const petalo1 = document.createElement('div');
+            petalo1.className = 'petalos petalo1';
+            petalo1.style.borderColor = colorAleatorio() + ' transparent transparent transparent';
+
+            const petalo2 = document.createElement('div');
+            petalo2.className = 'petalos petalo2';
+            petalo2.style.borderColor = colorAleatorio() + ' transparent transparent transparent';
+
+            const petalo3 = document.createElement('div');
+            petalo3.className = 'petalos petalo3';
+            petalo3.style.borderColor = colorAleatorio() + ' transparent transparent transparent';
+
+            tulipan.appendChild(petalo1);
+            tulipan.appendChild(petalo2);
+            tulipan.appendChild(petalo3);
+
+            tulipan.style.top = Math.random() * 100 + 'vh';
+            tulipan.style.left = Math.random() * 100 + 'vw';
+
+            document.body.appendChild(tulipan);
+        }
+
+        function colorAleatorio() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        for (let i = 0; i < 30; i++) {
+            crearTulipan();
+        }
+    </script>
+
+</body>
+</html>
